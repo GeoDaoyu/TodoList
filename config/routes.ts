@@ -21,32 +21,38 @@
   {
     path: '/welcome',
     name: 'welcome',
-    icon: 'smile',
     component: './Welcome',
+    hideInMenu: true,
   },
   {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
-    component: './Admin',
-    routes: [
-      {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        icon: 'smile',
-        component: './Welcome',
-      },
-      {
-        component: './404',
-      },
-    ],
+    path: '/jQuery',
+    name: 'jQuery',
+    component: './jQuery',
   },
   {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
+    path: '/Ramda',
+    name: 'Ramda',
+    component: './Ramda',
+  },
+  {
+    path: '/DvaJS',
+    name: 'DvaJS',
+    component: './DvaJS',
+  },
+  {
+    path: '/RTK',
+    name: 'RTK',
+    component: './RTK',
+  },
+  {
+    path: '/ahooks',
+    name: 'ahooks',
+    component: './ahooks',
+  },
+  {
+    path: '/rxjs',
+    name: 'rxjs',
+    component: './rxjs',
   },
   {
     path: '/',
