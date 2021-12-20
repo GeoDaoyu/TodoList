@@ -70,5 +70,9 @@ export default defineConfig({
   mfsu: {},
   webpack5: {},
   exportStatic: {},
-  extraPostCSSPlugins: [require('tailwindcss')],
+  extraPostCSSPlugins: [
+    require('tailwindcss')({
+      config: './tailwind.config.js',
+    }),
+  ],
 });
