@@ -1,7 +1,8 @@
-import { Typography, Checkbox } from 'antd';
+import { Typography, Checkbox, message } from 'antd';
+import { request } from 'umi';
 const { Text } = Typography;
 
-export default ({ info, onDelete, onEdit }) => {
+export default ({ info, onEdit, callback }) => {
   const { id, text } = info;
   const onClick = () => {
     onEdit({
@@ -9,8 +10,10 @@ export default ({ info, onDelete, onEdit }) => {
       text,
     });
   };
-  const onChange = () => {
-    onDelete({ id });
+  const onChange = async () => {
+    await request('/api/todoList', { method: 'DELETE', data: { id } });
+    message.success('已完成');
+    callback();
   };
   return (
     <li key={id} className="flex justify-between">
