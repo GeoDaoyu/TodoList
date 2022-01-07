@@ -54,6 +54,11 @@ export default () => {
     <List
       itemLayout="horizontal"
       dataSource={dataSource}
+      footer={
+        <a href="http://localhost:8000/umi/plugin/openapi" target="_blank">
+          openapi
+        </a>
+      }
       renderItem={({ avatar, to, title, description }: ListItem) => (
         <List.Item>
           <List.Item.Meta

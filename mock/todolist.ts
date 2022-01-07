@@ -28,6 +28,7 @@ export default {
     res.send({
       success: true,
       data: dataSource,
+      total: dataSource.length,
     });
   },
   'POST /api/todoList': (req: Request, res: Response) => {
