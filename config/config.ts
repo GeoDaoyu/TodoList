@@ -60,7 +60,7 @@ export default defineConfig({
     },
     {
       requestLibPath: "import { request } from 'umi'",
-      schemaPath: join(__dirname, 'oneapi.json'),
+      schemaPath: join(__dirname, 'openapi.json'),
       mock: false,
     },
   ],

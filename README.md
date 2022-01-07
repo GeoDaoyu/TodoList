@@ -75,42 +75,14 @@ import 'tailwindcss/tailwind.css';
 
 ## Swagger
 
+在https://editor.swagger.io/上编辑一份openapi。
+
+然后导出为 openapi.json，拷贝到 config 下。
+
 ## Mock
+
+在 mock 下新建`todoList.ts`文件，实现简单的增删改查。暴露出 4 个接口。
 
 ## Ramda
 
-先在 mock 中，把后台接口的增删改查写了。
-
-然后写页面。
-
-最后对接接口。
-
-## 纯 html
-
-就一个 html，加 css，没有 js
-
-功能就是展示。
-
-## jQuery
-
-展示、增加、删除
-
-jQuery 操作 html 模板，插入到 dom 节点
-
-## react
-
-增： [...arr, item]
-
-删： filter
-
-改： map
-
-查： arr
-
-mvvm
-
-redux
-
-rxjs
-
-分别有纯 react，ramda,dva,rtk,hooks,rxjs,bloc 等
+代表的是父子组件传参。
