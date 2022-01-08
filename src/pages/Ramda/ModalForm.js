@@ -6,13 +6,10 @@ export default ({ visible, type = 'add', initialValues = {}, setVisible, callbac
   const label = type === 'add' ? '新建' : '更新';
   const onFinish = async (values) => {
     if (type === 'add') {
-      await request('/api/todoList', { method: 'POST', data: values });
+      await request('/api/todo', { method: 'POST', data: values });
     } else {
-      const data = {
-        ...values,
-        id: initialValues.id,
-      };
-      await request('/api/todoList', { method: 'PUT', data });
+      const id = initialValues?.id;
+      await request(`/api/todo/${id}`, { method: 'PUT', data: values });
     }
     message.success(`${label}完成`);
     callback();

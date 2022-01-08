@@ -27,7 +27,7 @@ export default () => {
   };
 
   useEffect(() => {
-    request('/api/todoList').then(({ data }) => {
+    request('/api/todos').then(({ data }) => {
       setDataSource(data);
     });
   }, [action]);

@@ -11,7 +11,7 @@ export default ({ info, onEdit, callback }) => {
     });
   };
   const onChange = async () => {
-    await request('/api/todoList', { method: 'DELETE', data: { id } });
+    await request(`/api/todo/${id}`, { method: 'DELETE' });
     message.success('已完成');
     callback();
   };

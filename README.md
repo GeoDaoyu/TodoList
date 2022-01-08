@@ -1,8 +1,18 @@
-# Todolist
+# TodoList
 
-通过不同的技术栈写一系列 todolist，来对比理解。
+## 目的
 
-## 预处理
+通过不同的状态管理方式来写一系列 TodoList，来对比理解。
+
+## 需求分析
+
+一个列表，能对待办进行增删改查。
+
+仅对个人的待办列表，无权限控制。
+
+查询所有的待办，不做分页和过滤。
+
+## 前端预处理
 
 ### 使用 umi 搭建基础框架
 
@@ -73,13 +83,19 @@ import 'tailwindcss/tailwind.css';
 
 去掉了登录页面。
 
-## Swagger
+## 模拟后台接口
+
+后台接口使用 RESTful 风格。
+
+原因：笔者对接的后台，几乎全是 REST，所有不使用 GraphQL。
+
+### Swagger
 
 在https://editor.swagger.io/上编辑一份openapi。
 
 然后导出为 openapi.json，拷贝到 config 下。
 
-## Mock
+### Mock
 
 在 mock 下新建`todoList.ts`文件，实现简单的增删改查。暴露出 4 个接口。
 

@@ -13,11 +13,11 @@
     }
   ],
   "paths": {
-    "/api/todoList": {
+    "/api/todos": {
       "get": {
         "tags": ["todoList"],
         "summary": "获取待办列表",
-        "operationId": "todoList",
+        "operationId": "todos",
         "responses": {
           "200": {
             "description": "Success",
@@ -41,16 +41,19 @@
           }
         }
       },
+      "x-swagger-router-controller": "api"
+    },
+    "/api/todo": {
       "post": {
         "tags": ["todoList"],
         "summary": "新建待办",
         "operationId": "addTodo",
         "requestBody": {
-          "description": "Created user object",
+          "description": "Created todo object",
           "content": {
             "*/*": {
               "schema": {
-                "$ref": "#/components/schemas/TodoListItem"
+                "$ref": "#/components/schemas/AddTodoListItem"
               }
             }
           },
@@ -79,12 +82,27 @@
           }
         }
       },
+      "x-swagger-router-controller": "api"
+    },
+    "/api/todo/{id}": {
       "put": {
         "tags": ["todoList"],
         "summary": "修改待办",
         "operationId": "updateTodo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "待办唯一标识",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
         "requestBody": {
-          "description": "Created user object",
+          "description": "Created todo object",
           "content": {
             "*/*": {
               "schema": {
@@ -121,6 +139,17 @@
         "tags": ["todoList"],
         "summary": "删除待办",
         "operationId": "removeTodo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "待办唯一标识",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -152,12 +181,20 @@
   },
   "components": {
     "schemas": {
+      "AddTodoListItem": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "待办内容"
+          }
+        }
+      },
       "TodoListItem": {
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "description": "唯一标识"
           },
           "text": {
