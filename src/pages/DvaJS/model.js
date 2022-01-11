@@ -49,9 +49,7 @@ export default {
     },
     *updateTodo({ payload }, { call, put }) {
       yield call(updateTodo, payload);
-
       yield put({ type: 'query' });
-      return true;
     },
     *removeTodo({ payload }, { call, put }) {
       yield call(removeTodo, payload);
