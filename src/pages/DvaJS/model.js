@@ -4,13 +4,37 @@ export default {
   namespace: 'todoList',
   state: {
     todos: [],
-    editTodo: {},
+    modalVisit: false,
+    modalType: 'add', // ['add', 'edit']
+    currentTodo: {},
   },
   reducers: {
     setTodos(state, action) {
       return {
         ...state,
         todos: action.payload,
+      };
+    },
+    setModalVisit(state, action) {
+      return {
+        ...state,
+        modalVisit: action.payload,
+      };
+    },
+    onAdd(state) {
+      return {
+        ...state,
+        modalVisit: true,
+        modalType: 'add',
+        currentTodo: {},
+      };
+    },
+    onEdit(state, action) {
+      return {
+        ...state,
+        modalVisit: true,
+        modalType: 'edit',
+        currentTodo: action.payload,
       };
     },
   },
@@ -34,7 +58,6 @@ export default {
       yield put({ type: 'query' });
     },
   },
-
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname }) => {

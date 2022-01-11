@@ -2,12 +2,12 @@ import { Typography, Checkbox, message } from 'antd';
 import { connect } from 'umi';
 const { Text } = Typography;
 
-const ListItem = ({ info, onEdit, dispatch }) => {
+const ListItem = ({ info, dispatch }) => {
   const { id, text } = info;
   const onClick = () => {
-    onEdit({
-      id,
-      text,
+    dispatch({
+      type: 'todoList/onEdit',
+      payload: info,
     });
   };
   const onChange = async () => {

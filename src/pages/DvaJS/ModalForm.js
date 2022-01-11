@@ -2,7 +2,7 @@ import { message } from 'antd';
 import { ModalForm, ProFormTextArea } from '@ant-design/pro-form';
 import { connect } from 'umi';
 
-const TodoModalForm = ({ visible, type = 'add', initialValues = {}, setVisible, dispatch }) => {
+const TodoModalForm = ({ visible, initialValues, type, dispatch }) => {
   const label = type === 'add' ? '新建' : '更新';
   const onFinish = async (values) => {
     if (type === 'add') {
@@ -20,6 +20,11 @@ const TodoModalForm = ({ visible, type = 'add', initialValues = {}, setVisible, 
     message.success(`${label}完成`);
     return true;
   };
+  const setVisible = (val) =>
+    dispatch({
+      type: 'todoList/setModalVisit',
+      payload: val,
+    });
   return (
     <ModalForm
       title={`${label}待办`}
@@ -36,4 +41,8 @@ const TodoModalForm = ({ visible, type = 'add', initialValues = {}, setVisible, 
   );
 };
 
-export default connect()(TodoModalForm);
+export default connect(({ todoList }) => ({
+  visible: todoList.modalVisit,
+  initialValues: todoList.currentTodo,
+  type: todoList.modalType,
+}))(TodoModalForm);
