@@ -30,8 +30,8 @@ const dataSource: ListItem[] = [
   },
   {
     title: 'Redux Toolkit',
-    avatar: './images/RTK.ico',
-    to: '/RTK',
+    avatar: './images/ReduxToolkit.ico',
+    to: '/ReduxToolkit',
     description:
       'The official, opinionated, batteries-included toolset for efficient Redux development',
   },

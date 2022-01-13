@@ -40,9 +40,9 @@
     component: './DvaJS',
   },
   {
-    path: '/RTK',
-    name: 'RTK',
-    component: './RTK',
+    path: '/ReduxToolkit',
+    name: 'ReduxToolkit',
+    component: './ReduxToolkit',
   },
   {
     path: '/ahooks',
