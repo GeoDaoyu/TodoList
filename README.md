@@ -101,4 +101,64 @@ import 'tailwindcss/tailwind.css';
 
 ## Ramda
 
-代表的是父子组件传参。
+### 介绍
+
+React 是用于构建用户界面的 JavaScript 库。
+
+https://react.docschina.org/
+
+Ramda 是一款实用的 JavaScript 函数式编程库。
+
+https://ramda.cn/
+
+### 实践
+
+React 专注于构建用户界面，简单的状态管理可以使用 state、props、Context。
+
+在 demo 中，`index`是入口文件，大概拆分出`Container`、`List`、`ListItem`、`Trigger`、`ModalForm`
+
+等 5 个组件。
+
+`index`文件作为主文件，承担了大部分状态管理的功能。其他的子组件的状态变更，都通过 props 传参来控制。
+
+例如，**编辑待办**操作，点击待办项时，将待办信息从`ListItem`传递到`index`，再由`index`传递到`ModalForm`。
+
+## DvaJS
+
+### 介绍
+
+dva 首先是一个基于 redux 和 redux-saga 的数据流方案，然后为了简化开发体验，dva 还额外内置了 react-router 和 fetch，所以也可以理解为一个轻量级的应用框架。
+
+https://dvajs.com/
+
+### 实践\*
+
+dva 将状态存储在 store 中，通过 action 来修改状态，使数据流向十分清晰。
+
+相对于 Ramda 版本，DvaJS 版本主要增加了`model.js`和`service.js`两个文件。
+
+## ReduxToolkit
+
+### 介绍
+
+The official, opinionated, batteries-included toolset for efficient Redux development.
+
+https://redux-toolkit.js.org/
+
+### 实践\*
+
+和 dva 师出同门，都是基于 redux。被誉为 redux 最佳实践。
+
+也是将状态存储在 store 中，通过 action 来修改状态。增加了 slice 概念。
+
+## ahooks
+
+### 介绍
+
+### 实践
+
+## rxjs
+
+### 介绍
+
+### 实践
