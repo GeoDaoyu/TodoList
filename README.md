@@ -159,11 +159,21 @@ https://redux-toolkit.js.org/
 
 ### 介绍
 
-A high-quality & reliable React Hooks library.
+ahooks is A high-quality & reliable React Hooks library.
 
 https://ahooks.js.org/
 
+@umijs/plugin-model 是一种基于 `hooks` 范式的简易数据管理方案（部分场景可以取代 `dva`），通常用于中台项目的全局共享数据。
+
+我们都知道自定义 `hooks` 是逻辑复用的利器，但我们也知道它不能复用状态，就和 `react` 内置的 `hooks` 一样，每次调用产生的状态都是相互隔离、无关的。那么，在业务开发中，如果我们需要提取的逻辑和状态都希望能够在多个组件中『共享』，就像其他数据流管理工具（`dva`, `mobx`）一样，`@umijs/plugin-model` 就是一个不错的选择。
+
+https://umijs.org/zh-CN/plugins/plugin-model
+
 ### 实践
+
+作为 umi 的插件，启用需要在`src/models` 目录下创建 hooks model。所以仅使用于小型项目和全局共享数据。
+
+ahooks 的版本更贴近于 Ramda 的版本，只不过是把状态管理拆到的 models 中。
 
 ## rxjs
 
