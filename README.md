@@ -131,9 +131,9 @@ dva 首先是一个基于 redux 和 redux-saga 的数据流方案，然后为了
 
 https://dvajs.com/
 
-### 实践\*
+### 实践
 
-dva 将状态存储在 store 中，通过 action 来修改状态，使数据流向十分清晰。
+dva 将状态存储在 store 中，通过 action 来修改状态，使数据流向清晰。
 
 相对于 Ramda 版本，DvaJS 版本主要增加了`model.js`和`service.js`两个文件。
 
@@ -145,15 +145,23 @@ The official, opinionated, batteries-included toolset for efficient Redux develo
 
 https://redux-toolkit.js.org/
 
-### 实践\*
+### 实践
 
 和 dva 师出同门，都是基于 redux。被誉为 redux 最佳实践。
 
-也是将状态存储在 store 中，通过 action 来修改状态。增加了 slice 概念。
+也是将状态存储在 store 中，通过 action 来修改状态。增加了 slice 。
+
+相对于 Dva 版本，增加了`store`，`index`上通过`react-redux`的`Provider`对根组件进行了包裹。还增加了 slice。
+
+把 Dva 里的`model.js`拆成了两个 slice。
 
 ## ahooks
 
 ### 介绍
+
+A high-quality & reliable React Hooks library.
+
+https://ahooks.js.org/
 
 ### 实践
 
