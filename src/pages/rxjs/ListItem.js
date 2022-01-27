@@ -1,22 +1,23 @@
 import { Typography, Checkbox, message } from 'antd';
-import { connect } from 'umi';
+import { request } from 'umi';
+import { modalVisit$, type$, initialValues$, doQuery } from './store';
 
 const { Text } = Typography;
 
-const ListItem = ({ info, dispatch }) => {
+export default ({ info }) => {
   const { id, text } = info;
   const onClick = () => {
-    dispatch({
-      type: 'todoList/onEdit',
-      payload: info,
+    modalVisit$.next(true);
+    type$.next('edit');
+    initialValues$.next({
+      id,
+      text,
     });
   };
   const onChange = async () => {
-    await dispatch({
-      type: 'todoList/removeTodo',
-      payload: { id },
-    });
+    await request(`/api/todo/${id}`, { method: 'DELETE' });
     message.success('已完成');
+    doQuery();
   };
   return (
     <li key={id} className="flex justify-between">
@@ -27,5 +28,3 @@ const ListItem = ({ info, dispatch }) => {
     </li>
   );
 };
-
-export default connect()(ListItem);

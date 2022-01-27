@@ -1,5 +1,6 @@
 import { Typography, Checkbox, message } from 'antd';
 import { request } from 'umi';
+
 const { Text } = Typography;
 
 export default ({ info, onEdit, callback }) => {
