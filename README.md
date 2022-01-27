@@ -91,7 +91,7 @@ import 'tailwindcss/tailwind.css';
 
 ### Swagger
 
-在https://editor.swagger.io/上编辑一份openapi。
+在[swagger 在线编辑器](https://editor.swagger.io/)上编辑一份 openapi。
 
 然后导出为 openapi.json，拷贝到 config 下。
 
