@@ -27,7 +27,7 @@
 ### 安装依赖
 
 ```sh
-yarn add rxjs ramda jquery redux-toolkit
+yarn add rxjs ramda jquery redux-toolkit observable-hooks
 ```
 
 ### 使用 TailwindCSS
@@ -175,8 +175,20 @@ https://umijs.org/zh-CN/plugins/plugin-model
 
 ahooks 的版本更贴近于 Ramda 的版本，只不过是把状态管理拆到的 models 中。
 
-## rxjs
+## RxJS
 
 ### 介绍
 
+RxJS is Reactive Extensions Library for JavaScript.
+
+Reactive Extensions: An API for asynchronous programming with observable streams.
+
+https://rxjs-dev.firebaseapp.com/
+
 ### 实践
+
+useModel 通常是管理全局共享数据。rxjs 可以在组件间共享数据。
+
+rxjs 版本可以简单的看做 ahooks 版的升级版。状态在 store 中存储，组件读取状态通过 useObservableState 来连接。更新状态，通过`behaviorSubject$.next()`。
+
+在此版本中，rxjs 仅作为数据仓库来使用，还未使用到 rxjs 强大的 operator。
